@@ -1,0 +1,19 @@
+enable
+configure terminal
+
+hostname R3
+
+interface g1/0
+ip address 10.0.13.2 255.255.255.252
+no shutdown
+
+interface g2/0
+ip address 10.0.23.3 255.255.255.252
+no shutdown
+
+ip route 192.168.1.0 255.255.255.0 10.0.13.1
+
+ip route 192.168.2.0 255.255.255.0 10.0.23.2
+
+end
+write
